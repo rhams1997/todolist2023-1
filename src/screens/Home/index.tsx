@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Text, SafeAreaView, TextInput, TouchableOpacity, ScrollView, FlatList } from 'react-native';
-import { Button } from '../../components/Button';
+import { Button } from './components/Button';
 
 import { styles } from './styles';
 
