@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Text, SafeAreaView, TextInput, TouchableOpacity, ScrollView, FlatList } from 'react-native';
 import { Button } from '../../components/Button';
-
+import { TaskCard } from '../../components/TaskCard';
 import { styles } from './styles';
 
 interface TaskData {
@@ -53,14 +53,10 @@ export function Home() {
         data={tasks}
         keyExtractor={item => item.id}
         renderItem={({ item }) => (
-          <TouchableOpacity 
-            style={styles.buttonTask}
-            onPress={() => handleRemoveTask(item.id)}
-          >
-            <Text style={styles.textTask}>
-              {item.name}
-            </Text>
-          </TouchableOpacity>
+          <TaskCard
+            onPress={() => handleRemoveTask(item.id)} 
+            title={item.name}          
+          />
         )}
       />
     </SafeAreaView>
